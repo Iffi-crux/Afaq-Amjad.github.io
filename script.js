@@ -1,92 +1,59 @@
-/**
- * AFAQ AMJAD PORTFOLIO ENGINE - v2.0.55
- * Red Team / Founder @ Faseel Infosec
- */
+// ROBOT FRAMES
+const robotFrames = [
+    `      ▆▆▆▆▆▆\n    █        █\n   █  O    O  █\n   █    ▆     █\n    █  ▆▆▆   █\n     ▆▆▆▆▆▆`,
+    `      ▆▆▆▆▆▆\n    █        █\n   █  -    -  █\n   █    ▆     █\n    █  ▆▆▆   █\n     ▆▆▆▆▆▆`,
+    `      ▆▆▆▆▆▆\n    █        █\n   █  >    <  █\n   █    ▆     █\n    █  ▆▆▆   █\n     ▆▆▆▆▆▆`
+];
 
-// 1. SECURITY PROTOCOL: ACCESS DENIED
-// Triggers when a user tries to right-click to inspect your code
+let currentFrame = 0;
+function animateRobot() {
+    const bot = document.getElementById('animated-robot');
+    if(bot) {
+        bot.textContent = robotFrames[currentFrame];
+        currentFrame = (currentFrame + 1) % robotFrames.length;
+    }
+    setTimeout(animateRobot, 600);
+}
+
+// ACCESS DENIED
 function showAccessDenied(e) {
     e.preventDefault();
     const overlay = document.getElementById('access-denied');
     overlay.style.display = 'flex';
-    
-    // Auto-hide after 3 seconds
-    setTimeout(() => { 
-        overlay.style.display = 'none'; 
-    }, 3000);
-    
+    setTimeout(() => { overlay.style.display = 'none'; }, 3000);
     return false;
 }
 
-// 2. LIVE GITHUB FORGE: DYNAMIC PROJECT LOADING
-// Fetches your real repositories so the site is never "junk"
-async function fetchLiveProjects() {
-    const GITHUB_USER = 'Afaq-Amjad'; // Your GitHub username
-    const projectGrid = document.querySelector('.project-grid');
-
-    try {
-        const response = await fetch(`https://api.github.com/users/${GITHUB_USER}/repos?sort=updated`);
-        const repos = await response.json();
-        
-        // We only take the top 2 if we want to keep it "congested" and tight
-        // or keep your manual Faseel/Aegis entries and append these.
-        if (repos.length > 0) {
-            console.log("[SYSTEM] Live projects synchronized.");
-        }
-    } catch (err) {
-        console.error("[ERROR] Failed to bridge GitHub API.");
-    }
-}
-
-// 3. SYSTEM INTELLIGENCE FEED: YEAR 2055
-// Scrolling log entries highlighting your 200+ PortSwigger labs and P2 finds
+// 2055 SYSTEM LOG
 const logEntries = [
-    "[INFO] Booting Afaq-OS v9.4... [OK]",
-    "[AUTH] 200+ PortSwigger Labs: VERIFIED.",
-    "[DATA] PentesterLab: 6 Badges synchronized.",
+    "[INFO] Initializing Afaq-OS v9.4...",
+    "[AUTH] 200+ PortSwigger Labs Synchronized.",
+    "[DATA] PentesterLab: 6 Badges Verified.",
     "[SCAN] Searching for target vulnerabilities...",
-    "[LOAD] Aegis AI attack blocker: PHASE 1 ACTIVE.",
-    "[WARN] High-severity P2 detected in duplicate logs.",
-    "[INFO] Final Year Project: Faseel Scanner initialized.",
-    "[STATUS] OSCP / CPTS Prep: 85% completion rate.",
-    "[ALERT] Unauthorized inspection attempt logged.",
-    "[CMD] Hacking in English... LLM Red Teaming active."
+    "[LOAD] Aegis AI attack blocker: ACTIVE.",
+    "[WARN] P2 Duplicate detected in H1 feed.",
+    "[INFO] Faseel Scanner: Year 2055 Update Complete."
 ];
 
 let logIndex = 0;
 function typeLog() {
-    const logContainer = document.getElementById('live-log');
-    
-    if (logIndex < logEntries.length) {
-        const entry = document.createElement('p');
-        entry.style.margin = "2px 0";
-        entry.style.color = "#00ff41";
-        entry.innerHTML = `> ${logEntries[logIndex]}`;
-        
-        logContainer.appendChild(entry);
+    const log = document.getElementById('live-log');
+    if(logIndex < logEntries.length) {
+        log.innerHTML += `<p style="margin:2px 0; color:#00ff41;">> ${logEntries[logIndex]}</p>`;
         logIndex++;
-        
-        // Auto-scroll to keep the latest logs visible
-        logContainer.scrollTop = logContainer.scrollHeight;
-        
-        setTimeout(typeLog, 1500); // Time between new lines
+        log.scrollTop = log.scrollHeight;
+        setTimeout(typeLog, 2000);
     } else {
-        // Reset and clear to loop the feed
-        setTimeout(() => {
-            logContainer.innerHTML = "";
-            logIndex = 0;
-            typeLog();
-        }, 3000);
+        logIndex = 0; log.innerHTML = ""; typeLog();
     }
 }
 
-// 4. INITIALIZATION
 window.onload = () => {
+    animateRobot();
     typeLog();
-    fetchLiveProjects();
     
-    // Extra Security: Block F12 and Ctrl+Shift+I
-    document.onkeydown = function(e) {
+    // Block Inspect Keys
+    document.onkeydown = (e) => {
         if (e.keyCode == 123 || (e.ctrlKey && e.shiftKey && e.keyCode == 73)) {
             showAccessDenied(e);
             return false;
