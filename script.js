@@ -1,42 +1,48 @@
-const GITHUB_USER = 'Afaq-Amjad';
+const logElement = document.getElementById('live-log');
 
-async function loadRepos() {
-    const response = await fetch(`https://api.github.com/users/${GITHUB_USER}/repos?sort=updated`);
-    const repos = await response.json();
-    const grid = document.getElementById('repo-grid');
+const logEntries = [
+    "[INFO] Initializing Faseel OS v4.0...",
+    "[SUCCESS] 200+ PortSwigger Labs authenticated.",
+    "[STATUS] PentesterLab: 6/6 Badges synchronized.",
+    "[ALERT] Target acquisition: Searching for P2 vulnerabilities...",
+    "[DEV] Aegis AI attack blocker: 94% efficiency reached.",
+    "[SCAN] Monitoring HackerOne signal... Stable.",
+    "[ARCHIVE] 50+ vulnerabilities logged in public database.",
+    "[SPRINT] CPTS & OSCP paths merging in 3... 2... 1..."
+];
+
+let entryIndex = 0;
+
+function typeLog(text, index = 0) {
+    if (index === 0) {
+        const newLine = document.createElement('p');
+        newLine.className = 'log-entry';
+        logElement.appendChild(newLine);
+    }
     
-    grid.innerHTML = repos.slice(0, 6).map(repo => `
-        <div class="repo-card">
-            <h3>${repo.name}</h3>
-            <p>${repo.description || 'Cyber Security Tooling'}</p>
-            <div class="tags">
-                <span>⭐ ${repo.stargazers_count}</span>
-                <span>${repo.language}</span>
-            </div>
-            <a href="${repo.html_url}" target="_blank">View Source</a>
-        </div>
-    `).join('');
+    const lines = logElement.getElementsByClassName('log-entry');
+    const currentLine = lines[lines.length - 1];
+    
+    if (index < text.length) {
+        currentLine.innerHTML += text.charAt(index);
+        setTimeout(() => typeLog(text, index + 1), 30); // Typing speed
+    } else {
+        setTimeout(startNextEntry, 2000); // Pause before next line
+    }
+    
+    // Auto-scroll to bottom
+    logElement.scrollTop = logElement.scrollHeight;
 }
 
-loadRepos();
-
-// Minimal Terminal logic for the "Hacker" segment
-const input = document.getElementById('user-input');
-const output = document.getElementById('output');
-
-input.addEventListener('keydown', (e) => {
-    if (e.key === 'Enter') {
-        const cmd = input.value.toLowerCase();
-        output.innerHTML += `<p><span style="color:var(--accent)">$</span> ${cmd}</p>`;
-        
-        if (cmd === 'help') {
-            output.innerHTML += `<p>Modules: [status, exploits, contact]</p>`;
-        } else if (cmd === 'status') {
-            output.innerHTML += `<p>System: Operational. Current Focus: PentesterLab Badges.</p>`;
-        } else {
-            output.innerHTML += `<p>Command not found.</p>`;
-        }
-        
-        input.value = '';
+function startNextEntry() {
+    if (logElement.childNodes.length > 10) {
+        logElement.removeChild(logElement.firstChild);
     }
-});
+    typeLog(logEntries[entryIndex]);
+    entryIndex = (entryIndex + 1) % logEntries.length;
+}
+
+// Start the 2055 feed
+window.onload = () => {
+    startNextEntry();
+};
