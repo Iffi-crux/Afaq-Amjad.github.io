@@ -3,56 +3,77 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Afaq Amjad | Red Team Lead</title>
+    <title>Afaq Amjad | Red Team Dashboard</title>
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-    <div class="glow-bg"></div>
-    
-    <nav>
-        <div class="logo">AFAQ<span>AMJAD</span></div>
-        <div class="links">
-            <a href="#about">About</a>
-            <a href="#projects">Projects</a>
-            <a href="#exploits">Exploits</a>
-        </div>
-    </nav>
+    <div class="dashboard-wrapper">
+        <aside class="sidebar">
+            <div class="profile-frame">
+                <img src="robot-picture.jpg" alt="Afaq Robot Avatar" class="robot-img">
+            </div>
+            <h1>AFAQ AMJAD</h1>
+            <p class="tagline">Red Teamer | Founder @ Faseel Infosec</p>
+            <div class="h1-stats">
+                <div class="h1-badge">HackerOne: 6 Bugs Reported</div>
+                <div class="h1-badge">Total Vulns Found: 50+</div>
+            </div>
+            <nav class="side-nav">
+                <a href="index.html" class="active">Dashboard</a>
+                <a href="Projects.html">The Forge</a>
+                <a href="Certs.html">Certifications</a>
+            </nav>
+        </aside>
 
-    <section class="hero">
-        <div class="hero-content">
-            <h1>Offensive Security <span class="highlight">Architect</span></h1>
-            <p>Founder @ Faseel Infosec | Specialized in LLM Red Teaming & Web Exploitation</p>
-            <div class="stats-row">
-                <div class="stat-card"><span>173</span>PortSwigger Labs</div>
-                <div class="stat-card"><span>P2</span>Top Severity Find</div>
-                <div class="stat-card"><span>6+</span>Badges En Route</div>
-            </div>
-        </div>
-    </section>
+        <main class="grid-container">
+            <section class="card wide">
+                <h2><span class="icon">🚀</span> Active Sprints & Certifications</h2>
+                <div class="sprint-grid">
+                    <div class="sprint-item">
+                        <label>OSCP / CPTS</label>
+                        <div class="progress-bar"><div class="fill" style="width: 85%;"></div></div>
+                        <span>Status: Intensive Prep</span>
+                    </div>
+                    <div class="sprint-item">
+                        <label>HTB CBBH Path</label>
+                        <div class="badge-status">COMPLETED</div>
+                    </div>
+                </div>
+            </section>
 
-    <section id="terminal-segment">
-        <div class="terminal-window">
-            <div class="terminal-header">
-                <div class="buttons"><span></span><span></span><span></span></div>
-                <div class="title">bash — guest@afaq: ~</div>
-            </div>
-            <div id="output">
-                <p>> System initialized. Type 'help' to begin.</p>
-            </div>
-            <div class="input-line">
-                <span>$</span>
-                <input type="text" id="user-input" autofocus autocomplete="off">
-            </div>
-        </div>
-    </section>
+            <section class="card">
+                <h2><span class="icon">🛠️</span> Development Forge</h2>
+                <div class="project-item">
+                    <h3>FASEEL</h3>
+                    <p>Unified Security Scanner for Enterprise Infrastructures.</p>
+                </div>
+                <div class="project-item">
+                    <h3>AEGIS</h3>
+                    <p>AI-Powered Attack Blocker & Payload Filter.</p>
+                </div>
+            </section>
 
-    <section id="projects" class="grid-section">
-        <h2>Live <span class="highlight">Forge</span></h2>
-        <div id="repo-grid" class="grid">
-            </div>
-    </section>
+            <section class="card">
+                <h2><span class="icon">🧪</span> Lab Metrics</h2>
+                <ul class="metrics-list">
+                    <li><strong>PortSwigger:</strong> 200+ Labs (Server & Client Side)</li>
+                    <li><strong>PentesterLab:</strong> 6+ Badges Secured</li>
+                    <li><strong>OverTheWire:</strong> Bandit 0-10 Completed</li>
+                </ul>
+            </section>
 
-    <script src="script.js"></script>
+            <section class="card wide">
+                <h2><span class="icon">🎯</span> Vulnerability Feed</h2>
+                <div class="table-wrapper">
+                    <table>
+                        <tr><th>Impact</th><th>Vulnerability Type</th><th>Status</th></tr>
+                        <tr><td>P2</td><td>Server-Side Template Injection (SSTI)</td><td>Duplicate</td></tr>
+                        <tr><td>P3</td><td>Cross-Site Scripting (XSS)</td><td>Resolved</td></tr>
+                        <tr><td>P4</td><td>Insecure Direct Object Reference (IDOR)</td><td>Informative</td></tr>
+                    </table>
+                </div>
+            </section>
+        </main>
+    </div>
 </body>
 </html>
