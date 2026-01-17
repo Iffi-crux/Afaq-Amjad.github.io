@@ -3,89 +3,97 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard | Afaq Amjad</title>
+    <title>Afaq Amjad | Terminal 2055</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body oncontextmenu="return showAccessDenied(event)">
 
     <div id="access-denied">
         <div class="denied-content">
-            <h1>[!] ACCESS DENIED</h1>
-            <p>UNAUTHORIZED INSPECTION DETECTED. SYSTEM LOCKDOWN INITIATED.</p>
-            <p class="blink">TERMINAL ENCRYPTED // 2055_PROT</p>
+            <h1 class="blink">[!] SECURITY BREACH DETECTED</h1>
+            <p>ENCRYPTION ACTIVE // ACCESS DENIED</p>
         </div>
     </div>
 
-    <div class="dashboard-container">
+    <div class="dashboard-wrapper">
         <aside class="sidebar">
-            <div class="profile-section">
-                <div class="robot-frame">
-                    <img src="robot-hacker.jpg" alt="Afaq Robot" class="robot-img">
-                </div>
-                <h1 class="user-name">AFAQ AMJAD</h1>
-                <p class="tagline">Founder @ Faseel Infosec</p>
+            <div class="profile-area">
+                <img src="robot-hacker.jpg" alt="Afaq Robot" class="robot-img">
+                <h1>AFAQ AMJAD</h1>
+                <p class="role">Founder @ Faseel Infosec</p>
             </div>
-
-            <div class="h1-stats">
-                <div class="badge">H1: 6 BUGS</div>
-                <div class="badge">50+ VULNS</div>
+            <div class="sidebar-stats">
+                <div class="stat-row">H1 REPUTATION: <span>6 BUGS</span></div>
+                <div class="stat-row">VULNS DISCOVERED: <span>50+</span></div>
             </div>
-
-            <nav class="nav-menu">
-                <a href="index.html" class="nav-item active">DASHBOARD</a>
-                <a href="Projects.html" class="nav-item">THE FORGE</a>
-                <a href="Certs.html" class="nav-item">CERTIFICATIONS</a>
+            <nav class="sidebar-nav">
+                <a href="#" class="active">/DASHBOARD</a>
+                <a href="#">/THE_FORGE</a>
+                <a href="#">/CERTIFICATIONS</a>
             </nav>
         </aside>
 
-        <main class="main-content">
-            <div class="dashboard-grid">
-                
-                <section class="card stats-card">
-                    <h3>LAB METRICS</h3>
-                    <div class="metric">
-                        <label>PORTSWIGGER [200+ LABS]</label>
-                        <div class="progress"><div class="fill" style="width: 100%;"></div></div>
-                    </div>
-                    <div class="metric">
-                        <label>PENTESTERLAB [6+ BADGES]</label>
-                        <div class="progress"><div class="fill" style="width: 90%;"></div></div>
-                    </div>
-                </section>
-
-                <section class="card sprint-card">
-                    <h3>CURRENT SPRINT</h3>
-                    <ul class="sprint-list">
-                        <li><span class="status-on"></span> OSCP / CPTS PREP</li>
-                        <li><span class="status-on"></span> HTB CBBH PATH COMPLETED</li>
-                        <li><span class="status-wait"></span> BUG HUNTING SPRINT</li>
-                    </ul>
-                </section>
-
-                <div class="hero-card card">
-                    <img src="robot-hacker.jpg" alt="Workstation" class="hero-img">
-                    <div class="scanline"></div>
+        <main class="main-grid">
+            
+            <section class="card stats">
+                <h3>LAB METRICS [LIVE]</h3>
+                <div class="progress-container">
+                    <label>PORTSWIGGER [200+ LABS]</label>
+                    <div class="bar"><div class="fill" style="width: 100%;"></div></div>
                 </div>
+                <div class="progress-container">
+                    <label>PENTESTERLAB [6+ BADGES]</label>
+                    <div class="bar"><div class="fill" style="width: 85%;"></div></div>
+                </div>
+            </section>
 
-                <section class="card feed-card">
-                    <h3>VULNERABILITY FEED</h3>
-                    <div class="feed-item"><span class="p2">P2</span> SSTI - DUPLICATE</div>
-                    <div class="feed-item"><span class="p2">P2</span> XSS - DUPLICATE</div>
-                    <div class="feed-item"><span class="inf">INF</span> LOGIC - INFORMATIVE</div>
-                </section>
+            <section class="card sprint">
+                <h3>CURRENT SPRINT</h3>
+                <ul class="sprint-list">
+                    <li><span class="dot active"></span> OSCP / CPTS PREP</li>
+                    <li><span class="dot active"></span> HTB CBBH COMPLETED</li>
+                    <li><span class="dot pulse"></span> AI SECURITY RESEARCH</li>
+                </ul>
+            </section>
 
-                <section class="card project-card wide">
-                    <h3>DEVELOPMENT FORGE</h3>
-                    <div class="project-grid">
-                        <div class="proj"><h4>FASEEL</h4><p>Unified Enterprise Scanner</p></div>
-                        <div class="proj"><h4>AEGIS</h4><p>AI Attack Blocker</p></div>
-                    </div>
-                </section>
+            <section class="card hero-image">
+                <img src="robot-hacker.jpg" alt="Workstation" class="hero-img">
+                <div class="scanline"></div>
+            </section>
 
-                <section class="card system-log-card wide">
-                    <div id="live-log"></div>
-                </section>
-            </div>
+            <section class="card vuln-feed">
+                <h3>VULNERABILITY FEED</h3>
+                <div class="feed-item"><span class="p2">P2</span> SSTI - DUPLICATE</div>
+                <div class="feed-item"><span class="p2">P2</span> XSS - DUPLICATE</div>
+                <div class="feed-item"><span class="inf">INF</span> LOGIC - INFORMATIVE</div>
+                <div class="feed-item"><span class="p3">P3</span> CSRF - RESOLVED</div>
+            </section>
+
+            <section class="card project-box">
+                <h3>DEVELOPMENT_FORGE</h3>
+                <div class="project">
+                    <h4>FASEEL</h4>
+                    <p>Unified Enterprise Infrastructure Scanner</p>
+                </div>
+                <div class="project">
+                    <h4>AEGIS</h4>
+                    <p>AI-Powered Attack Blocker (LLM Defense)</p>
+                </div>
+            </section>
+
+            <section class="card llm-sec">
+                <h3>LLM_SECURITY_AUDIT</h3>
+                <div class="llm-grid">
+                    <div>LLM01: INJECTION [SUCCESS]</div>
+                    <div>LLM02: DATA_LEAK [SUCCESS]</div>
+                    <div>LLM06: MODEL_THEFT [IN_PROGRESS]</div>
+                </div>
+            </section>
+
+            <section class="card system-log wide">
+                <div id="live-log"></div>
+            </section>
+
         </main>
     </div>
 
