@@ -3,31 +3,56 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Afaq Amjad | Terminal Portfolio</title>
+    <title>Afaq Amjad | Red Team Lead</title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-    <div class="overlay"></div>
-    <div id="terminal-container">
-        <div id="output">
-            <pre style="color: #00ff41; font-weight: bold; font-size: 10px;">
- █████╗ ███████╗ █████╗  ██████╗      █████╗ ███╗   ███╗     ██╗ █████╗ ██████╗ 
-██╔══██╗██╔════╝██╔══██╗██╔═══██╗    ██╔══██╗████╗ ████║     ██║██╔══██╗██╔══██╗
-███████║█████╗  ███████║██║   ██║    ███████║██╔████╔██║     ██║███████║██║  ██║
-██╔══██║██╔══╝  ██╔══██║██║▄▄ ██║    ██╔══██║██║╚██╔╝██║██   ██║██╔══██║██║  ██║
-██║  ██║██║     ██║  ██║╚██████╔╝    ██║  ██║██║ ╚═╝ ██║╚█████╔╝██║  ██║██████╔╝
-╚═╝  ╚═╝╚═╝     ╚═╝  ╚═╝ ╚══▀▀═╝     ╚═╝  ╚═╝╚═╝     ╚═╝ ╚════╝ ╚═╝  ╚═╝╚═════╝ 
-            </pre>
-            <p class="output-text">Afaq Amjad OS [Version 2.0.1]</p>
-            <p class="output-text">Authenticated as: <strong>Red Teamer / Founder</strong></p>
-            <p class="output-text">Type <span style="color:white">'help'</span> to see available modules.</p>
+    <div class="glow-bg"></div>
+    
+    <nav>
+        <div class="logo">AFAQ<span>AMJAD</span></div>
+        <div class="links">
+            <a href="#about">About</a>
+            <a href="#projects">Projects</a>
+            <a href="#exploits">Exploits</a>
         </div>
-        <div class="input-line">
-            <span class="prompt">Afaq@Amjad:~$</span>
-            <input type="text" id="user-input" autofocus autocomplete="off">
-            <span id="cursor"></span>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Offensive Security <span class="highlight">Architect</span></h1>
+            <p>Founder @ Faseel Infosec | Specialized in LLM Red Teaming & Web Exploitation</p>
+            <div class="stats-row">
+                <div class="stat-card"><span>173</span>PortSwigger Labs</div>
+                <div class="stat-card"><span>P2</span>Top Severity Find</div>
+                <div class="stat-card"><span>6+</span>Badges En Route</div>
+            </div>
         </div>
-    </div>
+    </section>
+
+    <section id="terminal-segment">
+        <div class="terminal-window">
+            <div class="terminal-header">
+                <div class="buttons"><span></span><span></span><span></span></div>
+                <div class="title">bash — guest@afaq: ~</div>
+            </div>
+            <div id="output">
+                <p>> System initialized. Type 'help' to begin.</p>
+            </div>
+            <div class="input-line">
+                <span>$</span>
+                <input type="text" id="user-input" autofocus autocomplete="off">
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="grid-section">
+        <h2>Live <span class="highlight">Forge</span></h2>
+        <div id="repo-grid" class="grid">
+            </div>
+    </section>
+
     <script src="script.js"></script>
 </body>
 </html>
