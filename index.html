@@ -3,76 +3,88 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Afaq Amjad | Red Team Dashboard</title>
+    <title>Dashboard | Afaq Amjad</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <div class="dashboard-wrapper">
+    <div class="dashboard-container">
         <aside class="sidebar">
-            <div class="profile-frame">
-                <img src="robot-picture.jpg" alt="Afaq Robot Avatar" class="robot-img">
+            <div class="profile-section">
+                <div class="profile-pic-container">
+                    <img src="robot-hacker.jpg" alt="Afaq Robot" class="profile-img">
+                </div>
+                <h1 class="user-name">AFAQ AMJAD</h1>
+                <p class="tagline">Founder @ Faseel Infosec</p>
             </div>
-            <h1>AFAQ AMJAD</h1>
-            <p class="tagline">Red Teamer | Founder @ Faseel Infosec</p>
+
             <div class="h1-stats">
-                <div class="h1-badge">HackerOne: 6 Bugs Reported</div>
-                <div class="h1-badge">Total Vulns Found: 50+</div>
+                <div class="badge">H1: 6 Bugs</div>
+                <div class="badge">Total: 50+ Vulns</div>
             </div>
-            <nav class="side-nav">
-                <a href="index.html" class="active">Dashboard</a>
-                <a href="Projects.html">The Forge</a>
-                <a href="Certs.html">Certifications</a>
+
+            <nav class="nav-menu">
+                <a href="index.html" class="nav-item active">Dashboard</a>
+                <a href="Projects.html" class="nav-item">Projects</a>
+                <a href="Certs.html" class="nav-item">Certifications</a>
+                <a href="CTFs.html" class="nav-item">CTF Writeups</a>
             </nav>
         </aside>
 
-        <main class="grid-container">
-            <section class="card wide">
-                <h2><span class="icon">🚀</span> Active Sprints & Certifications</h2>
-                <div class="sprint-grid">
-                    <div class="sprint-item">
-                        <label>OSCP / CPTS</label>
-                        <div class="progress-bar"><div class="fill" style="width: 85%;"></div></div>
-                        <span>Status: Intensive Prep</span>
+        <main class="main-content">
+            <header class="top-bar">
+                <div class="breadcrumb">Dashboard / Overview</div>
+                <div class="status-indicator">SYSTEM: OPERATIONAL</div>
+            </header>
+
+            <div class="dashboard-grid">
+                <div class="hero-card card">
+                    <div class="image-wrapper">
+                        <img src="robot-hacker.jpg" alt="Robot Workspace" class="hero-img">
+                        <div class="scanline"></div>
                     </div>
-                    <div class="sprint-item">
-                        <label>HTB CBBH Path</label>
-                        <div class="badge-status">COMPLETED</div>
+                </div>
+
+                <div class="stats-column">
+                    <section class="card stats-card">
+                        <h3>Vulnerability Feed</h3>
+                        <ul class="feed-list">
+                            <li><span class="p2">P2</span> SSTI - Duplicate</li>
+                            <li><span class="p2">P2</span> XSS - Duplicate</li>
+                            <li><span class="inf">INF</span> Logic Flaw - Informative</li>
+                        </ul>
+                    </section>
+
+                    <section class="card lab-card">
+                        <h3>Lab Metrics</h3>
+                        <div class="metric">
+                            <label>PortSwigger (200+ Labs)</label>
+                            <div class="progress"><div class="fill" style="width: 100%;"></div></div>
+                        </div>
+                        <div class="metric">
+                            <label>PentesterLab (6 Badges)</label>
+                            <div class="progress"><div class="fill" style="width: 85%;"></div></div>
+                        </div>
+                    </section>
+                </div>
+
+                <div class="card wide-card">
+                    <h3>Active Development Forge</h3>
+                    <div class="project-flex">
+                        <div class="project">
+                            <h4>FASEEL</h4>
+                            <p>Unified Enterprise Security Scanner.</p>
+                        </div>
+                        <div class="project">
+                            <h4>AEGIS</h4>
+                            <p>AI-Powered Attack Blocker.</p>
+                        </div>
+                        <div class="project">
+                            <h4>OSCP / CPTS</h4>
+                            <p>Intensive Certification Sprint.</p>
+                        </div>
                     </div>
                 </div>
-            </section>
-
-            <section class="card">
-                <h2><span class="icon">🛠️</span> Development Forge</h2>
-                <div class="project-item">
-                    <h3>FASEEL</h3>
-                    <p>Unified Security Scanner for Enterprise Infrastructures.</p>
-                </div>
-                <div class="project-item">
-                    <h3>AEGIS</h3>
-                    <p>AI-Powered Attack Blocker & Payload Filter.</p>
-                </div>
-            </section>
-
-            <section class="card">
-                <h2><span class="icon">🧪</span> Lab Metrics</h2>
-                <ul class="metrics-list">
-                    <li><strong>PortSwigger:</strong> 200+ Labs (Server & Client Side)</li>
-                    <li><strong>PentesterLab:</strong> 6+ Badges Secured</li>
-                    <li><strong>OverTheWire:</strong> Bandit 0-10 Completed</li>
-                </ul>
-            </section>
-
-            <section class="card wide">
-                <h2><span class="icon">🎯</span> Vulnerability Feed</h2>
-                <div class="table-wrapper">
-                    <table>
-                        <tr><th>Impact</th><th>Vulnerability Type</th><th>Status</th></tr>
-                        <tr><td>P2</td><td>Server-Side Template Injection (SSTI)</td><td>Duplicate</td></tr>
-                        <tr><td>P3</td><td>Cross-Site Scripting (XSS)</td><td>Resolved</td></tr>
-                        <tr><td>P4</td><td>Insecure Direct Object Reference (IDOR)</td><td>Informative</td></tr>
-                    </table>
-                </div>
-            </section>
+            </div>
         </main>
     </div>
 </body>
