@@ -12,7 +12,6 @@
         <div class="denied-content">
             <h1 class="blink">[!] SECURITY BREACH DETECTED</h1>
             <p>UNAUTHORIZED INSPECTION ATTEMPT // ACCESS DENIED</p>
-            <p>IP_LOGGED // ENCRYPTION_ACTIVE</p>
         </div>
     </div>
 
@@ -26,100 +25,54 @@
                 <h1 class="glitch" data-text="AFAQ AMJAD">AFAQ AMJAD</h1>
                 <p class="role-badge">RED TEAM LEAD</p>
             </div>
-
-            <div class="sidebar-divider"></div>
-
             <nav class="futuristic-nav">
-                <a href="index.html" class="nav-btn active">
-                    <span class="cmd-prefix">></span> DASHBOARD
-                    <div class="nav-glow"></div>
-                </a>
-                <a href="Projects.html" class="nav-btn">
-                    <span class="cmd-prefix">></span> THE_FORGE
-                    <div class="nav-glow"></div>
-                </a>
-                <a href="Certs.html" class="nav-btn">
-                    <span class="cmd-prefix">></span> CERTIFICATIONS
-                    <div class="nav-glow"></div>
-                </a>
+                <a href="index.html" class="nav-btn active">> DASHBOARD</a>
+                <a href="Projects.html" class="nav-btn">> THE_FORGE</a>
+                <a href="Certs.html" class="nav-btn">> CERTIFICATIONS</a>
             </nav>
-
             <div class="system-integrity">
                 <label>SYSTEM INTEGRITY</label>
                 <div class="integrity-bar"><div class="integrity-fill"></div></div>
                 <span class="integrity-percent">99.4%</span>
             </div>
-            
-            <div class="sidebar-stats">
-                <p>H1 REPUTATION: <span>6 BUGS</span></p>
-                <p>VULNS FOUND: <span>50+</span></p>
-            </div>
         </aside>
 
         <main class="main-grid">
-            
-            <section class="card stats">
-                <h3>LAB_METRICS [LIVE]</h3>
-                <div class="progress-container">
-                    <label>PORTSWIGGER [200+ LABS]</label>
-                    <div class="bar"><div class="fill" style="width: 100%;"></div></div>
-                </div>
-                <div class="progress-container">
-                    <label>PENTESTERLAB [6+ BADGES]</label>
-                    <div class="bar"><div class="fill" style="width: 85%;"></div></div>
-                </div>
-            </section>
-
-            <section class="card sprint">
-                <h3>CURRENT_SPRINT</h3>
-                <ul class="sprint-list">
-                    <li><span class="dot active"></span> OSCP / CPTS PREP</li>
-                    <li><span class="dot active"></span> HTB CBBH COMPLETED</li>
-                    <li><span class="dot pulse"></span> AI SECURITY RESEARCH</li>
-                </ul>
-            </section>
-
             <section class="card hero-image">
-                <img src="robot-hacker.jpg" alt="Workstation" class="hero-img">
+                <h3>CORE_WORKSTATION_VISUAL</h3>
+                <img src="image_f069b4.png" alt="Robot Workstation" class="hero-img">
                 <div class="scanline"></div>
             </section>
 
-            <section class="card vuln-feed">
-                <h3>VULNERABILITY_FEED</h3>
-                <div class="feed-item"><span class="p2">P2</span> SSTI - DUPLICATE</div>
-                <div class="feed-item"><span class="p2">P2</span> XSS - DUPLICATE</div>
-                <div class="feed-item"><span class="inf">INF</span> LOGIC - INFORMATIVE</div>
-                <div class="feed-item"><span class="p3">P3</span> CSRF - RESOLVED</div>
-            </section>
-
-            <section class="card project-box">
-                <h3>DEVELOPMENT_FORGE</h3>
-                <div class="project">
-                    <h4>FASEEL</h4>
-                    <p>Unified Enterprise Infrastructure Scanner</p>
-                </div>
-                <div class="project">
-                    <h4>AEGIS</h4>
-                    <p>AI-Powered Attack Blocker (LLM Defense)</p>
-                </div>
-            </section>
-
             <section class="card llm-sec">
-                <h3>LLM_SECURITY_AUDIT</h3>
+                <h3>OWASP_LLM_TOP_10_AUDIT</h3>
                 <div class="llm-grid">
-                    <div class="llm-item">LLM01: INJECTION [OK]</div>
-                    <div class="llm-item">LLM02: DATA_LEAK [OK]</div>
-                    <div class="llm-item">LLM06: THEFT [RUNNING]</div>
+                    <div class="llm-item">LLM01: Prompt Injection <span class="status">[OK]</span></div>
+                    <div class="llm-item">LLM02: Insecure Output Handling <span class="status">[OK]</span></div>
+                    <div class="llm-item">LLM03: Training Data Poisoning <span class="status">[OK]</span></div>
+                    <div class="llm-item">LLM04: Model Denial of Service <span class="status">[OK]</span></div>
+                    <div class="llm-item">LLM05: Supply Chain Vulnerabilities <span class="status">[OK]</span></div>
+                    <div class="llm-item">LLM06: Sensitive Information Disclosure <span class="status">[OK]</span></div>
+                    <div class="llm-item">LLM07: Insecure Plugin Design <span class="status">[OK]</span></div>
+                    <div class="llm-item">LLM08: Excessive Agency <span class="status">[OK]</span></div>
+                    <div class="llm-item">LLM09: Overreliance <span class="status">[OK]</span></div>
+                    <div class="llm-item">LLM10: Model Theft <span class="status">[OK]</span></div>
                 </div>
+            </section>
+
+            <section class="card stats">
+                <h3>LAB_METRICS [LIVE]</h3>
+                <div class="bar-label">PORTSWIGGER [200+ LABS]</div>
+                <div class="bar"><div class="fill" style="width: 100%;"></div></div>
+                <div class="bar-label">PENTESTERLAB [6+ BADGES]</div>
+                <div class="bar"><div class="fill" style="width: 90%;"></div></div>
             </section>
 
             <section class="card system-log wide">
                 <div id="live-log"></div>
             </section>
-
         </main>
     </div>
-
     <script src="script.js"></script>
 </body>
 </html>
