@@ -11,32 +11,55 @@
     <div id="access-denied">
         <div class="denied-content">
             <h1 class="blink">[!] SECURITY BREACH DETECTED</h1>
-            <p>ENCRYPTION ACTIVE // ACCESS DENIED</p>
+            <p>UNAUTHORIZED INSPECTION ATTEMPT // ACCESS DENIED</p>
+            <p>IP_LOGGED // ENCRYPTION_ACTIVE</p>
         </div>
     </div>
 
     <div class="dashboard-wrapper">
         <aside class="sidebar">
-            <div class="profile-area">
-                <img src="robot-hacker.jpg" alt="Afaq Robot" class="robot-img">
-                <h1>AFAQ AMJAD</h1>
-                <p class="role">Founder @ Faseel Infosec</p>
+            <div class="profile-header">
+                <div class="robot-ascii-container">
+                    <pre id="animated-robot"></pre>
+                    <div class="status-overlay">SCANNING...</div>
+                </div>
+                <h1 class="glitch" data-text="AFAQ AMJAD">AFAQ AMJAD</h1>
+                <p class="role-badge">RED TEAM LEAD</p>
             </div>
-            <div class="sidebar-stats">
-                <div class="stat-row">H1 REPUTATION: <span>6 BUGS</span></div>
-                <div class="stat-row">VULNS DISCOVERED: <span>50+</span></div>
-            </div>
-            <nav class="sidebar-nav">
-                <a href="#" class="active">/DASHBOARD</a>
-                <a href="#">/THE_FORGE</a>
-                <a href="#">/CERTIFICATIONS</a>
+
+            <div class="sidebar-divider"></div>
+
+            <nav class="futuristic-nav">
+                <a href="index.html" class="nav-btn active">
+                    <span class="cmd-prefix">></span> DASHBOARD
+                    <div class="nav-glow"></div>
+                </a>
+                <a href="Projects.html" class="nav-btn">
+                    <span class="cmd-prefix">></span> THE_FORGE
+                    <div class="nav-glow"></div>
+                </a>
+                <a href="Certs.html" class="nav-btn">
+                    <span class="cmd-prefix">></span> CERTIFICATIONS
+                    <div class="nav-glow"></div>
+                </a>
             </nav>
+
+            <div class="system-integrity">
+                <label>SYSTEM INTEGRITY</label>
+                <div class="integrity-bar"><div class="integrity-fill"></div></div>
+                <span class="integrity-percent">99.4%</span>
+            </div>
+            
+            <div class="sidebar-stats">
+                <p>H1 REPUTATION: <span>6 BUGS</span></p>
+                <p>VULNS FOUND: <span>50+</span></p>
+            </div>
         </aside>
 
         <main class="main-grid">
             
             <section class="card stats">
-                <h3>LAB METRICS [LIVE]</h3>
+                <h3>LAB_METRICS [LIVE]</h3>
                 <div class="progress-container">
                     <label>PORTSWIGGER [200+ LABS]</label>
                     <div class="bar"><div class="fill" style="width: 100%;"></div></div>
@@ -48,7 +71,7 @@
             </section>
 
             <section class="card sprint">
-                <h3>CURRENT SPRINT</h3>
+                <h3>CURRENT_SPRINT</h3>
                 <ul class="sprint-list">
                     <li><span class="dot active"></span> OSCP / CPTS PREP</li>
                     <li><span class="dot active"></span> HTB CBBH COMPLETED</li>
@@ -62,7 +85,7 @@
             </section>
 
             <section class="card vuln-feed">
-                <h3>VULNERABILITY FEED</h3>
+                <h3>VULNERABILITY_FEED</h3>
                 <div class="feed-item"><span class="p2">P2</span> SSTI - DUPLICATE</div>
                 <div class="feed-item"><span class="p2">P2</span> XSS - DUPLICATE</div>
                 <div class="feed-item"><span class="inf">INF</span> LOGIC - INFORMATIVE</div>
@@ -84,9 +107,9 @@
             <section class="card llm-sec">
                 <h3>LLM_SECURITY_AUDIT</h3>
                 <div class="llm-grid">
-                    <div>LLM01: INJECTION [SUCCESS]</div>
-                    <div>LLM02: DATA_LEAK [SUCCESS]</div>
-                    <div>LLM06: MODEL_THEFT [IN_PROGRESS]</div>
+                    <div class="llm-item">LLM01: INJECTION [OK]</div>
+                    <div class="llm-item">LLM02: DATA_LEAK [OK]</div>
+                    <div class="llm-item">LLM06: THEFT [RUNNING]</div>
                 </div>
             </section>
 
