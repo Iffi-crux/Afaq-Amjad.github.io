@@ -1,62 +1,42 @@
-const output = document.getElementById('output');
-const input = document.getElementById('user-input');
+const GITHUB_USER = 'Afaq-Amjad';
 
-// Replace with your actual GitHub username
-const GITHUB_USER = 'Afaq-Amjad'; 
-
-const commands = {
-    'help': 'Modules: [projects, exploits, experience, github, clear, sudo exploit]',
-    'experience': `<strong>[Identity]</strong><br>
-                   - Founder @ Faseel Infosec (2024 - Present)<br>
-                   - Offensive Security Researcher (Red Teaming)<br>
-                   - Final Year Student Researcher<br>
-                   - Focus: Web & LLM Security`,
-    'exploits': `<strong>[Bug Hunting Archive]</strong><br>
-                 - [P2] Duplicate: High Impact Web Exploitation<br>
-                 - [P3/P4] Informative: Logic & IDOR Flaws<br>
-                 - Progress: 173 PortSwigger Labs Complete`,
-    'sudo exploit': '<span style="color:#ff003c">Critical: System override initiated... Just kidding. Welcome Admin.</span>'
-};
-
-// Function to fetch Live Projects from GitHub
-async function fetchGithubProjects() {
-    printLine("Fetching live data from GitHub API...", "output-text");
-    try {
-        const response = await fetch(`https://api.github.com/users/${GITHUB_USER}/repos?sort=updated`);
-        const repos = await response.json();
-        let list = "<strong>[Live GitHub Forge]</strong><br>";
-        repos.slice(0, 5).forEach(repo => {
-            list += `- <a href="${repo.html_url}" target="_blank">${repo.name}</a>: ${repo.description || 'No description'} (⭐ ${repo.stargazers_count})<br>`;
-        });
-        printLine(list, "output-text");
-    } catch (err) {
-        printLine("Error: Could not connect to GitHub API.", "output-text");
-    }
+async function loadRepos() {
+    const response = await fetch(`https://api.github.com/users/${GITHUB_USER}/repos?sort=updated`);
+    const repos = await response.json();
+    const grid = document.getElementById('repo-grid');
+    
+    grid.innerHTML = repos.slice(0, 6).map(repo => `
+        <div class="repo-card">
+            <h3>${repo.name}</h3>
+            <p>${repo.description || 'Cyber Security Tooling'}</p>
+            <div class="tags">
+                <span>⭐ ${repo.stargazers_count}</span>
+                <span>${repo.language}</span>
+            </div>
+            <a href="${repo.html_url}" target="_blank">View Source</a>
+        </div>
+    `).join('');
 }
 
-input.addEventListener('keydown', async (e) => {
+loadRepos();
+
+// Minimal Terminal logic for the "Hacker" segment
+const input = document.getElementById('user-input');
+const output = document.getElementById('output');
+
+input.addEventListener('keydown', (e) => {
     if (e.key === 'Enter') {
-        const val = input.value.toLowerCase().trim();
-        printLine(`Afaq@Amjad:~$ ${val}`, 'prompt');
+        const cmd = input.value.toLowerCase();
+        output.innerHTML += `<p><span style="color:var(--accent)">$</span> ${cmd}</p>`;
         
-        if (val === 'projects' || val === 'ls') {
-            await fetchGithubProjects();
-        } else if (commands[val]) {
-            printLine(commands[val], 'output-text');
-        } else if (val === 'clear') {
-            output.innerHTML = '';
+        if (cmd === 'help') {
+            output.innerHTML += `<p>Modules: [status, exploits, contact]</p>`;
+        } else if (cmd === 'status') {
+            output.innerHTML += `<p>System: Operational. Current Focus: PentesterLab Badges.</p>`;
         } else {
-            printLine(`Command '${val}' not found. Type 'help' for available modules.`, 'output-text');
+            output.innerHTML += `<p>Command not found.</p>`;
         }
         
         input.value = '';
-        document.getElementById('terminal-container').scrollTop = document.getElementById('terminal-container').scrollHeight;
     }
 });
-
-function printLine(text, className) {
-    const p = document.createElement('p');
-    p.innerHTML = text;
-    p.className = className;
-    output.appendChild(p);
-}
