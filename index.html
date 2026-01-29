@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Haraki - Cyberpunk Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;700&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+</head>
+<body>
+    <!-- Background 3D Canvas -->
+    <canvas id="bg-canvas"></canvas>
+    
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <span class="glitch" data-text="AFAQ">AFAQ</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#skills" class="nav-link">Skills</a></li>
+                <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <div class="profile-container">
+                    <div class="profile-image">
+                        <img src="profile.jpg" alt="Haraki Profile" class="profile-img">
+                        <div class="profile-border"></div>
+                    </div>
+                </div>
+                <div class="hero-text">
+                    <h1 class="hero-title">
+                        <span class="text-gradient">AFAQ AMJAD</span>
+                    </h1>
+                    <h2 class="hero-subtitle">
+                        <span class="typewriter" id="typewriter">Security Researcher</span>
+                    </h2>
+                    <p class="hero-description">
+                        Bug Bounty Hunter & Penetration Tester specializing in Web Application Security, AI/LLM Red Teaming, and automated security frameworks
+                    </p>
+                    <div class="hero-status">
+                        <div class="status-indicator"></div>
+                        <span>Available for work</span>
+                    </div>
+                    <div class="hero-buttons">
+                        <button class="btn-primary" onclick="scrollToSection('projects')">
+                            <span>View Projects</span>
+                            <div class="btn-glow"></div>
+                        </button>
+                        <button class="btn-secondary" onclick="scrollToSection('contact')">
+                            <span>Contact Me</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="hero-particles"></div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title">
+                <span class="section-number">01.</span>
+                About Me
+            </h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p class="about-description">
+                        Final-year Computer Systems Engineering student and active Bug Bounty Hunter with over 50 vulnerabilities reported, including 6 on HackerOne. Founder of Faseel Infosec, specializing in Web Application Security (OWASP Top 10), AI/LLM Red Teaming, and automated security framework development. Currently developing "Aegis" (AI-attack blocker) and the "Faseel Unified Framework."
+                    </p>
+                    <div class="about-details">
+                        <div class="detail-item">
+                            <span class="detail-label">Bugs Reported:</span>
+                            <span class="detail-value">50+ Vulnerabilities</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Location:</span>
+                            <span class="detail-value">Peshawar, Pakistan</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Status:</span>
+                            <span class="detail-value status-available">Available for Engagements</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-visual">
+                    <div class="hologram-container">
+                        <div class="hologram-content">
+                            <div class="code-lines">
+                                <div class="code-line">const security_researcher = {</div>
+                                <div class="code-line">  name: 'Afaq Amjad',</div>
+                                <div class="code-line">  specialization: 'Web App Security',</div>
+                                <div class="code-line">  bugs_reported: '50+',</div>
+                                <div class="code-line">  mission: 'Secure the Digital World'</div>
+                                <div class="code-line">};</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills">
+        <div class="container">
+            <h2 class="section-title">
+                <span class="section-number">02.</span>
+                Skills & Technologies
+            </h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3 class="category-title">Core Security</h3>
+                    <div class="skill-items">
+                        <div class="skill-item">
+                            <span class="skill-name">Penetration Testing</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="95%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">Web App Security</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="98%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">Network Exploitation</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="90%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3 class="category-title">AI Security</h3>
+                    <div class="skill-items">
+                        <div class="skill-item">
+                            <span class="skill-name">LLM Prompt Injection</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="92%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">AI Chatbot Logic Bypass</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="88%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">Jailbreaking</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="85%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3 class="category-title">Programming</h3>
+                    <div class="skill-items">
+                        <div class="skill-item">
+                            <span class="skill-name">Python</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="95%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">C++/C</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="80%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">JavaScript</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="75%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3 class="category-title">Security Tools</h3>
+                    <div class="skill-items">
+                        <div class="skill-item">
+                            <span class="skill-name">Burp Suite Pro</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="98%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">Metasploit</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="90%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">Nmap/Wireshark</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="92%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+        <div class="container">
+            <h2 class="section-title">
+                <span class="section-number">03.</span>
+                Featured Projects
+            </h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-image">
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="#" class="project-link">GitHub</a>
+                                <a href="#" class="project-link">Details</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Faseel Unified Framework</h3>
+                        <p class="project-description">Proprietary engine that automates the kill chain: Reconnaissance, WAF Evasion, and Exploitation. Integrated custom IP rotation and stealth headers to bypass standard perimeter defenses.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">API Integration</span>
+                            <span class="tech-tag">Automation</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-image">
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="#" class="project-link">GitHub</a>
+                                <a href="#" class="project-link">Demo</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Aegis (AI Attack Blocker)</h3>
+                        <p class="project-description">Experimental defense system designed to detect and block Prompt Injection and Jailbreak attacks against Large Language Models (LLMs).</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">AI Security</span>
+                            <span class="tech-tag">Machine Learning</span>
+                            <span class="tech-tag">Python</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-image">
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="#" class="project-link">GitHub</a>
+                                <a href="#" class="project-link">Source</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Hidden_Blade</h3>
+                        <p class="project-description">Post-exploitation automation tool that identifies and exploits misconfigured Sudo permissions using GTFOBins logic for privilege escalation.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">Post-Exploitation</span>
+                            <span class="tech-tag">Linux</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-image">
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="#" class="project-link">GitHub</a>
+                                <a href="#" class="project-link">Tool</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Net-Blade</h3>
+                        <p class="project-description">Network forensics tool using Scapy to automate extraction of cleartext credentials and detect covert channels (ICMP tunneling) from PCAP files.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Scapy</span>
+                            <span class="tech-tag">Network Forensics</span>
+                            <span class="tech-tag">PCAP Analysis</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-image">
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="#" class="project-link">Repository</a>
+                                <a href="#" class="project-link">Payloads</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Web-Sec Arsenal</h3>
+                        <p class="project-description">Repository of custom XSS payloads and polyglots for testing modern WAF filtering rules, plus personal exploit database for IDOR and Race Conditions.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">XSS</span>
+                            <span class="tech-tag">Burp Suite</span>
+                            <span class="tech-tag">JavaScript</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-image">
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="https://hackerone.com" class="project-link">HackerOne</a>
+                                <a href="#" class="project-link">Reports</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Bug Bounty Portfolio</h3>
+                        <p class="project-description">50+ valid vulnerability reports across various platforms, specializing in IDOR, Race Conditions, and AI Chatbot Logic Bypass. 6 reports submitted on HackerOne.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Bug Bounty</span>
+                            <span class="tech-tag">Web Security</span>
+                            <span class="tech-tag">OWASP Top 10</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">
+                <span class="section-number">04.</span>
+                Get In Touch
+            </h2>
+            <div class="contact-content">
+                <div class="contact-text">
+                    <p>Ready to bring your next project to life? Let's connect and create something amazing together.</p>
+                </div>
+                <div class="contact-form">
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <input type="text" name="name" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" name="email" placeholder="Your Email" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn-primary">
+                            <span>Send Message</span>
+                            <div class="btn-glow"></div>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <p>&copy; 2026 Afaq Amjad. Securing the digital frontier.</p>
+                <div class="social-links">
+                    <a href="https://github.com/afaqpk" class="social-link">GitHub</a>
+                    <a href="https://www.linkedin.com/in/afaqamjad" class="social-link">LinkedIn</a>
+                    <a href="https://hackerone.com/afaq" class="social-link">HackerOne</a>
+                    <a href="mailto:afaqpk1@gmail.com" class="social-link">Email</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
